@@ -14,6 +14,11 @@ const initialState: ChatMessagesState = {
     messages: []
 }
 
+export const selectMessages = (state: { ChatMessages: ChatMessagesState }): Message[] => {
+    console.log(state)
+    return state.ChatMessages.messages
+}
+
 export const chatMessages = createSlice({
     name: 'ChatMessages',
     initialState,
@@ -23,3 +28,5 @@ export const chatMessages = createSlice({
         }
     }
 })
+
+export default chatMessages.reducer

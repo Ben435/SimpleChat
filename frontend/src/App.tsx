@@ -1,6 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Provider } from 'react-redux'
+import store from './app/store';
+import ChatLog from './app/components/ChatLog';
 
 function App() {
   return (
@@ -19,6 +22,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <Provider store={store}>
+        <ChatLog />
+      </Provider>
     </div>
   );
 }
